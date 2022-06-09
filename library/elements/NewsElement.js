@@ -25,7 +25,7 @@ export class NewsElement extends PageElement {
     }
 
     build() {
-        const classes = ['news'];
+        const classes = ['news', this.params.class];
         this.withBorder && classes.push('border');
         this.withBackground && classes.push('background');
         this.domElement = DOM.tag({

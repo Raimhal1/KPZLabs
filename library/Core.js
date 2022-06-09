@@ -7,28 +7,29 @@ export class Core {
     static #instance;
 
     static getInstance() {
-        if (!this.#instance) {
+        if (!this.#instance)
             this.#instance = new Core();
-        }
         return this.#instance;
     }
 
-    // composer
+
     render() {
         // abstract factory
-        let defaultElementNews = new NewsFactory().create('default')
+        const factory = new NewsFactory()
+
+        let defaultElementNews = factory.createDefaultNews()
         // builder
         defaultElementNews.addBorder();
         // factory method
         defaultElementNews.build();
 
-        let newElementNews1 = new NewsFactory().create('new')
-        newElementNews1.addBackground();
-        newElementNews1.build();
+        let newsElement = factory.createNews()
+        newsElement.addBackground();
+        newsElement.build();
 
         // prototype
-        let newElementNews2 = newElementNews1.clone();
-        newElementNews2.build();
+        let clonedNewsElement = newsElement.clone();
+        clonedNewsElement.build();
 
         // adapter
         let newsElementOtherLibrary = new NewsElementAdaptee({
@@ -46,13 +47,15 @@ export class Core {
             text: 'Text of news bridge',
             link: '#'
         }))
+        newsElementBridge.addBackground();
         newsElementBridge.build();
 
         const root = document.getElementById('root');
+
         root.append(
             defaultElementNews.getDOMElement(),
-            newElementNews1.getDOMElement(),
-            newElementNews2.getDOMElement(),
+            newsElement.getDOMElement(),
+            clonedNewsElement.getDOMElement(),
             newsElementOtherLibrary.getDOMElement(),
             newsElementBridge.getDOMElement(),
         )

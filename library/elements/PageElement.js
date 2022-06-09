@@ -6,6 +6,15 @@ export class PageElement {
         this.params = params;
     }
 
+    addBorder() {
+
+    }
+
+    addBackground() {
+
+    }
+
+
     getDOMElement() {
         return this.domElement;
     }

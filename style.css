@@ -40,5 +40,11 @@ div.news div.photo img {
 }
 
 .background {
-    background-color: grey;
+    background-color: #d0c0ec;
 }
+
+.casualNews {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 0, 251, 0.2);
+}
+
