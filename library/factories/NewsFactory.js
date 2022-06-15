@@ -1,6 +1,7 @@
 import {NewsElementCreator} from "../creators/NewsElementCreator.js";
+import {Factory} from "./Factory.js";
 
-export class NewsFactory {
+export class NewsFactory extends Factory {
     createNews() {
         return new NewsElementCreator().create({
             title: '[NEW] Title of news',

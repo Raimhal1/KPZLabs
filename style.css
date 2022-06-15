@@ -12,7 +12,7 @@ div.news div.photo, div.user div.photo {
     float: left;
     width: 150px;
     height: 150px;
-    background-color: aqua;
+    background-color: rgba(119, 0, 255, 0.51);
     overflow: hidden;
 }
 
