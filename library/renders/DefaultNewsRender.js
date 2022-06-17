@@ -5,7 +5,13 @@ import {instance} from "../instance.js";
 export class DefaultNewsRender extends Render{
 	render() {
 		// abstract factory
-		let newsFactory = new NewsFactory()
+		let newsFactory = new NewsFactory({
+			title: "Title of news",
+			text: "Text of news",
+			link: "#",
+			image: 'img/news.png'
+		})
+
 		let defaultElementNews = newsFactory.createDefaultNews()
 
 		// builder

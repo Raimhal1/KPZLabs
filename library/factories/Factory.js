@@ -1,4 +1,6 @@
 export class Factory {
+	props = {}
+
 	createDefaultNews(){
 
 	}

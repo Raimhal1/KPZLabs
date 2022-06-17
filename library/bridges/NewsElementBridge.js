@@ -8,7 +8,6 @@ export class NewsElementBridge {
 
     getDOMElement() {
         return this.newsElement.getDOMElement();
-
     }
 
     addBorder() {

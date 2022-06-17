@@ -12,6 +12,8 @@ export class NewsBridgeRender extends Render{
 			text: 'Text of bridge',
 			link: '#'
 		}))
+
+		// builder
 		newsElementBridge.addBackground();
 		newsElementBridge.build();
 

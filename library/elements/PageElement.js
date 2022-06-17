@@ -22,4 +22,8 @@ export class PageElement {
     clone() {
         return new PageElement(this.params);
     }
+
+    build() {
+
+    }
 }
