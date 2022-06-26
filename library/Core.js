@@ -6,6 +6,7 @@ import {DecoratorRender} from "./renders/DecoratorRender.js";
 import {RenderFacade} from "./facades/RenderFacade.js";
 import {FlyweightRender} from "./renders/FlyweightRender.js";
 import {ProxyRender} from "./renders/ProxyRender.js";
+import {ComposerCollection} from "./iterators/ComposerCollection.js";
 
 // composer
 export class Core extends Render{
@@ -31,7 +32,12 @@ export class Core extends Render{
     }
 
     render() {
-        // facade
-        new RenderFacade(this.elements).Operation()
+        // iterator
+        const collection = new ComposerCollection(this.elements)
+        const iterator = collection.getEnumerator()
+
+        while(iterator.moveNext())
+            (new (iterator.current())).render()
+
     }
 }

@@ -1,6 +1,7 @@
 import {Render} from "./Render.js";
 import {NewsFactory} from "../factories/NewsFactory.js";
 import {instance} from "../instance.js";
+import {CreateNewNewsCommand} from "../commands/CreateNewNewsCommand.js";
 
 export class NewNewsRender extends Render{
 	render() {
@@ -16,6 +17,13 @@ export class NewNewsRender extends Render{
 		// prototype
 		let newElementNews2 = newElementNews1.clone();
 		newElementNews2.build();
+
+		// command
+		const createNewNewsCommand = new CreateNewNewsCommand(newsFactory, instance)
+
+		createNewNewsCommand.execute()
+		createNewNewsCommand.execute()
+		createNewNewsCommand.execute()
 
 		instance.append(
 			newElementNews1.getDOMElement(),

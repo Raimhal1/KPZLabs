@@ -16,7 +16,6 @@ export class NewsFlyweightFactory extends FlyweightFactory {
             this.#flyweights.push(news)
         }
 
-        console.log(news)
         return news;
     }
 
@@ -30,7 +29,6 @@ export class NewsFlyweightFactory extends FlyweightFactory {
             this.#flyweights.push(news)
         }
 
-        console.log(news)
         return news;
     }
 }
