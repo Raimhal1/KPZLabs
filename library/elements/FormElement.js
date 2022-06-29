@@ -6,6 +6,10 @@ export class FormElement extends PageElement {
         super(params);
     }
 
+    accept(visitor) {
+        visitor.visitFormElement(this)
+    }
+
     build() {
         this.domElement =
             DOM.tag(

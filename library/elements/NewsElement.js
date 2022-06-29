@@ -24,8 +24,12 @@ export class NewsElement extends PageElement {
         return newsElement;
     }
 
+    accept(visitor) {
+        visitor.visitNewsElement(this)
+    }
+
     build() {
-        const classes = ['news', this.params.class];
+        const classes = ['news', this.params?.class];
         this.withBorder && classes.push('border');
         this.withBackground && classes.push('background');
         this.domElement = DOM.tag({
@@ -39,13 +43,13 @@ export class NewsElement extends PageElement {
                             DOM.tag({
                                 name: 'a',
                                 attributes: {
-                                    href: this.params.link
+                                    href: this.params?.link
                                 },
                                 content: DOM.tag(
                                     {
                                         name: 'img',
                                         attributes: {
-                                            href: this.params.image
+                                            href: this.params?.image
                                         }
                                     }
                                 )
@@ -62,15 +66,15 @@ export class NewsElement extends PageElement {
                                 content: DOM.tag({
                                     name: 'a',
                                     attributes: {
-                                        href: this.params.link
+                                        href: this.params?.link
                                     },
-                                    content: this.params.title
+                                    content: this.params?.title
                                 })
                             }),
                             DOM.tag({
                                 name: 'div',
                                 class: 'text',
-                                content: this.params.text
+                                content: this.params?.text
                             }),
                         ]
                     })

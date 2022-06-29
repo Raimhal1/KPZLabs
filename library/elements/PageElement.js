@@ -26,4 +26,6 @@ export class PageElement {
     build() {
 
     }
+
+    accept(visitor){}
 }

@@ -7,6 +7,7 @@ import {RenderFacade} from "./facades/RenderFacade.js";
 import {FlyweightRender} from "./renders/FlyweightRender.js";
 import {ProxyRender} from "./renders/ProxyRender.js";
 import {ComposerCollection} from "./iterators/ComposerCollection.js";
+import {TemplateMethodRender} from "./renders/TemplateMethodRender.js";
 
 // composer
 export class Core extends Render{
@@ -19,7 +20,8 @@ export class Core extends Render{
         this.elements.push(NewsBridgeRender);
         this.elements.push(DecoratorRender);
         this.elements.push(FlyweightRender);
-        this.elements.push(ProxyRender)
+        this.elements.push(ProxyRender);
+        this.elements.push(TemplateMethodRender)
     }
 
     // singleton

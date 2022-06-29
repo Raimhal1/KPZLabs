@@ -6,6 +6,10 @@ export class UserElement extends PageElement {
         super(params);
     }
 
+    accept(visitor) {
+        visitor.visitUserElement(this)
+    }
+
     build() {
         this.domElement = DOM.tag({
             name: 'div',
